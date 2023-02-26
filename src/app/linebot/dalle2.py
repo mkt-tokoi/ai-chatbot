@@ -3,7 +3,6 @@ from copy import copy
 
 import openai
 import requests
-from app.conf_and_cert import OPENAI_API_KEY
 from linebot.models import MessageEvent, TemplateSendMessage, CarouselTemplate, CarouselColumn, PostbackAction, \
     MessageAction, PostbackEvent, SendMessage
 from linebot.models import (BoxComponent, BubbleContainer, FlexSendMessage,
@@ -13,7 +12,6 @@ from fastapi import FastAPI
 
 from app.linebot import LineBot
 
-openai.api_key = OPENAI_API_KEY
 # LINE Botに関するインスタンス作成
 
 histories = {}

@@ -6,3 +6,5 @@ fastapi~=0.92.0
 line-bot-sdk~=2.4.1  # Python >= 3.7
 
 openai~=0.26.5
+
+boto3~=1.26.79

@@ -9,8 +9,7 @@ from fastapi import Header, Request
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from starlette.exceptions import HTTPException
-from app.conf_and_cert import *
-from app.conf_and_cert import OPENAI_API_KEY
+from app.secrets import *
 from linebot.models import MessageEvent, TemplateSendMessage, CarouselTemplate, CarouselColumn, PostbackAction, \
     MessageAction, PostbackEvent, SendMessage
 from linebot.models import (BoxComponent, BubbleContainer, FlexSendMessage,
@@ -18,7 +17,7 @@ from linebot.models import (BoxComponent, BubbleContainer, FlexSendMessage,
 import urllib.parse
 from fastapi import FastAPI
 
-openai.api_key = OPENAI_API_KEY
+openai.api_key = get_secret("/openai/apikey")
 # LINE Botに関するインスタンス作成
 
 histories = {}
@@ -26,8 +25,8 @@ histories = {}
 
 class LineBot(metaclass=ABCMeta):
     def __init__(self, fast_api: FastAPI, path: str):
-        self.linebot_api: LineBotApi = LineBotApi(LINEBOT_CHANNEL_ACCESS_TOKEN)
-        self.webhook_handler: WebhookHandler = WebhookHandler(LINEBOT_CHANNEL_SECRET)
+        self.linebot_api: LineBotApi = LineBotApi(get_secret(path + "/CHANNEL_ACCESS_TOKEN"))
+        self.webhook_handler: WebhookHandler = WebhookHandler(get_secret(path + "/CHANNEL_SECRET"))
         fast_api.post(path)(self.handle_line_webhook_call)
         self.webhook_handler.add(MessageEvent)(self.__handle_message)
         self.webhook_handler.add(PostbackEvent)(self.__handle_postback)
