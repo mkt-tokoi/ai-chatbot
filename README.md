@@ -1,4 +1,4 @@
-# study-dalle_linebot
+# OpenAI API + linebot
 
 ## Setup AWS SecretManager
 
