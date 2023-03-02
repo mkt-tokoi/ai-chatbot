@@ -5,6 +5,7 @@ from botocore.exceptions import ClientError
 def get_secret(key_name):
 
     secret_name = "prod/openai_linebot"
+    # secret_name = "dev/openai_linebot"
     region_name = "us-east-1"
 
     # Create a Secrets Manager client
