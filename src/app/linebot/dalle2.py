@@ -99,7 +99,8 @@ def generate_images(img_command, history):
 
 def transcript_to_eng_if_isnt(user_msg):
     transcription_res = openai.Completion.create(
-        engine="text-davinci-003",
+        # engine="text-davinci-003",
+        engine="gpt-3.5-turbo",
         max_tokens=1000,
         prompt=f"以下の文章を英語に翻訳してください。（英語の場合はそのまま出力してください）\n---\n{user_msg}\n---\n\n英訳または元の文章：",
     )

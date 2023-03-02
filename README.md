@@ -10,6 +10,8 @@
   "/linebot/davinci3/CHANNEL_SECRET":"xxxxxxxxxxxxxxxxx",
   "/linebot/dalle2/CHANNEL_ACCESS_TOKEN":"xxxxxxxxxxxxxxxxx",
   "/linebot/dalle2/CHANNEL_SECRET":"xxxxxxxxxxxxxxxxx",
+  "/linebot/gpt35turbo/CHANNEL_ACCESS_TOKEN":"xxxxxxxxxxxxxxxxx",
+  "/linebot/gpt35turbo/CHANNEL_SECRET":"xxxxxxxxxxxxxxxxx",
   "/openai/apikey":"xxxxxxxxxxxxxxxxx"}
 ```
 
@@ -33,5 +35,10 @@ ngrok http 5000
 ```
 
 ## register your webhook url to LINE developer console
+
+- webhook urls : 
+  - `https://xxxxx/linebot/gpt35turbo`
+  - `https://xxxxx/linebot/dalle2`
+  - `https://xxxxx/linebot/davinci3`
 
 - https://developers.line.biz/console/

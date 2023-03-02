@@ -50,9 +50,10 @@ class LineBot(metaclass=ABCMeta):
             response = handler(*args)
             self.linebot_api.reply_message(args[0].reply_token, response)
         except Exception as e:
-            response = TextSendMessage("Error（ごめん。ちょっとバグってます）")
-            self.linebot_api.reply_message(args[0].reply_token, response)
-            raise e
+            print(e)
+            # response = TextSendMessage("Error（ごめん。ちょっとバグってます）")
+            # self.linebot_api.reply_message(args[0].reply_token, response)
+
 
     @abstractmethod
     def handle_message(self, event: MessageEvent, dest) -> SendMessage:
