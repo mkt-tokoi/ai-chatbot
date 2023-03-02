@@ -1,4 +1,4 @@
-# study-dalle_linebot
+# OpenAI API + linebot
 
 ## Setup AWS SecretManager
 
@@ -10,8 +10,6 @@
   "/linebot/davinci3/CHANNEL_SECRET":"xxxxxxxxxxxxxxxxx",
   "/linebot/dalle2/CHANNEL_ACCESS_TOKEN":"xxxxxxxxxxxxxxxxx",
   "/linebot/dalle2/CHANNEL_SECRET":"xxxxxxxxxxxxxxxxx",
-  "/linebot/gpt35turbo/CHANNEL_ACCESS_TOKEN":"xxxxxxxxxxxxxxxxx",
-  "/linebot/gpt35turbo/CHANNEL_SECRET":"xxxxxxxxxxxxxxxxx",
   "/openai/apikey":"xxxxxxxxxxxxxxxxx"}
 ```
 
